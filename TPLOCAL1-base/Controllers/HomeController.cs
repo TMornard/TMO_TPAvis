@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
 using TPLOCAL1.Models;
-
 using System;
+using System.Text.RegularExpressions;
+using System.Linq.Expressions;
+
 
 //Subject is find at the root of the project and the logo in the wwwroot/ressources folders of the solution
 //--------------------------------------------------------------------------------------
@@ -31,29 +32,36 @@ namespace TPLOCAL1.Controllers
                     case "Form":
                         //TODO : call the Form view with data model empty
                         return View(id);
+                    case "Validation":
+                        return View(id);
                     default:
-                        //retourn to the Index view (see routing in Program.cs)
+                        //return to the Index view (see routing in Program.cs)
                         return View();
                 }
             }
         }
 
-        [HttpPost]
-        public ActionResult Index(Formulaire formulaire)
-        {
-            return View(formulaire);
-        }
 
-        public ActionResult ValidationFormulaire(FormCollection formulaire) 
+        [HttpPost]
+        public ActionResult Validation(Formulaire formulaire)
         {
-            if (1 % 2 == 1)
+            bool b = ModelState.IsValid;
+            if (ModelState.IsValid)
             {
-                return View("Validation");
+                formulaire.DateDebut = formatageDate(formulaire.DateDebut);
+                return View("Validation", formulaire);
+
             }
             else
             {
-                return View("Form");
+                return View("Form", formulaire);
             }
+        }
+
+        // Transformation d'une date sous la forme AAAA-MM-JJ en une date sur la forme JJ/MM/AAAA
+        public String formatageDate(String date)
+        {
+            return date.Substring(8, 2) + "\\" + date.Substring(5, 2) + "\\" + date.Substring(0, 4);
         }
     }
 }

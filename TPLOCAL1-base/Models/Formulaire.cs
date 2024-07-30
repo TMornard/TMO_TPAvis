@@ -1,41 +1,64 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace TPLOCAL1.Models
 {
     public class Formulaire
     {
         [Required]
         [Display(Name = "Nom")]
-        public string Nom        { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Nom\" requis")]
+        public string? Nom        { get; set; }
+
         [Required]
         [Display(Name = "Prenom")]
-        public string Prenom     { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Prénom\" requis")]
+        public string? Prenom     { get; set; }
+
         [Required]
         [Display(Name = "Sexe")]
-        public string Sexe       { get; set; }
+        [RegularExpression(@"^Homme$|^Femme$|^Autre$", ErrorMessage = "Paramètre \"Sexe\" requis")]
+        public string? Sexe       { get; set; }
+
         [Required]
         [Display(Name = "Adresse")]
-        public string Adresse    { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Adresse\" requis")]
+        public string? Adresse    { get; set; }
+
         [Required]
         [Display(Name = "Code")]
-        public int    Code       { get; set; }
+        [RegularExpression(@"[0-9]{5}", ErrorMessage = "Code postal erroné")]
+        public string? Code       { get; set; }
+
         [Required]
         [Display(Name = "Ville")]
-        public string Ville      { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Ville\" requis")]
+        public string? Ville      { get; set; }
+
         [Required]
         [Display(Name = "Mail")]
-        public string Mail       { get; set; }
+        [RegularExpression(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$", ErrorMessage = "Format adresse mail non-conforme")]
+        public string? Mail       { get; set; }
+
         [Required]
         [Display(Name = "DateDebut")]
-        public string DateDebut  { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Date de début de formation\" requis")]
+        public string? DateDebut  { get; set; }
+
         [Required]
         [Display(Name = "Formation")]
-        public string Formation  { get; set; }
+        [RegularExpression(@"^COBOL$|^CSharp$|^Autre$", ErrorMessage = "Paramètre \"Formation\" requis")]
+        public string? Formation  { get; set; }
+
         [Required]
         [Display(Name = "AvisCOBOL")]
-        public string AvisCOBOL  { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Avis COBOL\" requis")]
+        public string? AvisCOBOL  { get; set; }
+
         [Required]
         [Display(Name = "AvisC#")]
-        public string AvisCSharp { get; set; }
+        [RegularExpression(@".+", ErrorMessage = "Paramètre \"Avis C#\" requis")]
+        public string? AvisCSharp { get; set; }
+
     }
 }

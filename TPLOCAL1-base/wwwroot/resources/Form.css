@@ -52,6 +52,12 @@ section {
         border: 2px solid black;
     }
 
-button{
+.Submit{
     margin-left: 50px;
+}
+
+.erreur {
+    color: red !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 11px !important;
 }
