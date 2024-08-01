@@ -27,7 +27,7 @@ namespace TPLOCAL1.Models
 
         [Required]
         [Display(Name = "Code")]
-        [RegularExpression(@"[0-9]{5}", ErrorMessage = "Code postal erroné. Format attendu : 11111 (5 chiffres consécutifs)")]
+        [RegularExpression(@"[0-9]{5}", ErrorMessage = "Code postal erroné. Format attendu : 5 chiffres consécutifs")]
         public string? Code       { get; set; }
 
         [Required]

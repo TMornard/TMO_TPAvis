@@ -36,7 +36,7 @@
                 <tr>
                     <td>Nom</td>
                     <td>
-                        <input type="text" asp-for="Nom">
+                        <input type="text" asp-for="Nom" asp-validation-for="Nom" placeholder="Martin">
                         <span asp-validation-for="Nom" class="erreur"></span>
                     </td>
                     
@@ -45,7 +45,7 @@
                 <tr>
                     <td>Prénom</td>
                     <td>
-                        <input type="text" asp-for="Prenom" asp-validation-for="Prenom">
+                        <input type="text" asp-for="Prenom" asp-validation-for="Prenom" placeholder="Dupont">
                         <span asp-validation-for="Prenom" class="erreur"></span>
                     </td>
                 </tr>
@@ -64,28 +64,28 @@
                 <tr>
                     <td>Adresse</td>
                     <td>
-                        <input type="text" asp-for="Adresse" asp-validation-for="Adresse">
+                        <input type="text" asp-for="Adresse" asp-validation-for="Adresse" placeholder="1 rue de la rue">
                         <span asp-validation-for="Adresse" class="erreur"></span>
                     </td>
                 </tr>
                 <tr>
                     <td>Code postal</td>
                     <td>
-                        <input type="text" asp-for="Code" asp-validation-for="Code">
+                        <input type="text" asp-for="Code" asp-validation-for="Code" placeholder="00000">
                         <span asp-validation-for="Code" class="erreur"></span>
                     </td>
                 </tr>
                 <tr>
                     <td>Ville</td>
                     <td>
-                        <input type="text" asp-for="Ville" asp-validation-for="Ville">
+                        <input type="text" asp-for="Ville" asp-validation-for="Ville" placeholder="Paris">
                         <span asp-validation-for="Ville" class="erreur"></span>
                     </td>
                 </tr>
                 <tr>
                     <td>Adresse mail</td>
                     <td>
-                        <input type="text" asp-for="Mail" asp-validation-for="Mail">
+                        <input type="text" asp-for="Mail" asp-validation-for="Mail" placeholder="martindupont@mail.dom">
                         <span asp-validation-for="Mail" class="erreur"></span>
                     </td>
                     
